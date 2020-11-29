@@ -13,6 +13,10 @@ jobs:
         run: pwd
       - name: List Filed in Directory
         run: ls
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0'
       - name: Check dotnet Cli
         run: dotnet build
       - name: List Filed in Directory
