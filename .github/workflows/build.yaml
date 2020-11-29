@@ -4,10 +4,18 @@ on: push
 
 jobs:
   build:
+    name: Build our App
     runs-on: ubuntu-latest
     steps:
-      - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v1.7.2
-        with:
-          dotnet-version: '5.0'
-
+      - name: Pull Code
+        uses: actions/checkout@v2
+      - name: Print Current Directory
+        run: pwd
+      - name: List Filed in Directory
+        run: ls
+      - name: Check dotnet Cli
+        run: dotnet build
+      - name: List Filed in Directory
+        run: ls TrickingLibrary/ -R
+      - name: Check NPM Cli
+        run: npm -v
