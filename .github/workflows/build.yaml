@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0' 
-      - run: dotnet build <my project>
+      - run: dotnet build
       - name: Check dotnet Cli
         run: dotnet build
       - name: List Filed in Directory
