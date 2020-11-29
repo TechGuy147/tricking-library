@@ -5,14 +5,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet: [ '2.2.103', '3.0', '3.1', '5.0' ]
-    name: Dotnet ${{ matrix.dotnet }} sample
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: ${{ matrix.dotnet }}
-      - run: dotnet build 
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+
