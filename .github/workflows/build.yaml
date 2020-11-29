@@ -14,7 +14,11 @@ jobs:
       - name: List Filed in Directory
         run: ls
       - name: Install .net 5.0
-        run: dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore
+      - uses: actions/checkout@main
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0' 
+      - run: dotnet build <my project>
       - name: Check dotnet Cli
         run: dotnet build
       - name: List Filed in Directory
