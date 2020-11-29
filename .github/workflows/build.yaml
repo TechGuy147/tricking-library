@@ -13,6 +13,8 @@ jobs:
         run: pwd
       - name: List Filed in Directory
         run: ls
+      - name: Install .net 5.0
+        run: dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore
       - name: Check dotnet Cli
         run: dotnet build
       - name: List Filed in Directory
